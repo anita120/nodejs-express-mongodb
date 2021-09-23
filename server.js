@@ -5,7 +5,7 @@ const app = express();
 
 const db = require("./app/models");
 db.mongoose
-  .connect(db.url, {
+  .connect(process.env.MONGODB_URI || db.url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
