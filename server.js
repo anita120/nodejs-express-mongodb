@@ -4,8 +4,9 @@ const cors = require("cors");
 const app = express();
 
 const db = require("./app/models");
+const uri = process.env.MONGODB_URI;
 db.mongoose
-  .connect(process.env.MONGODB_URI || db.url, {
+  .connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
