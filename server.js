@@ -5,8 +5,9 @@ const app = express();
 
 const db = require("./app/models");
 const uri = process.env.MONGODB_URI;
+const connectionstr = 'mongodb+srv://anita:welcome123@cluster0.0ezxs.mongodb.net/test_db?retryWrites=true&w=majority';
 db.mongoose
-  .connect(uri, {
+  .connect(process.env.MONGODB_URI || connectionstr, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
